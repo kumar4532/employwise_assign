@@ -1,12 +1,49 @@
-# React + Vite
+# Project Setup Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setting Up the Project
+Follow these steps to set up the project:
 
-Currently, two official plugins are available:
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/kumar4532/employwise_assign.git
+    cd employwise_assign
+    ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. **Install Dependencies**:
+    Run:
+    ```bash
+    bun install
+    ```
 
-## Expanding the ESLint configuration
+## Running the Project
+1. **Start the Development Server**:
+    Use the following command to start the server in development mode:
+    ```bash
+    bun run dev
+    ```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Build for Production**:
+    To prepare the project for production, run:
+    ```bash
+    bun run build
+    ```
+
+3. **Run in Production Mode**:
+    After building, start the production server:
+    ```bash
+    bun start
+    ```
+
+## Considerations made while working
+We assume that the backend has a database storing user details and that an API exists to handle user updates. However, since we are working within a frontend-only scope and using a mock API (ReqRes), the updated user details do not persist after a page reload.
+
+# Impact of the Assumption
+
++ Frontend Implementation: The application successfully updates user details within the current session by modifying state.
+
++ Navigation: After editing, the user is navigated back to the home page, triggering a fresh API call that retrieves data from the mock API, which does not reflect the updates.
+
++ Real-World Scenario: If a real database were connected, the updates would be stored and retrieved correctly upon re-fetching the data.
+
+## Deployed Project
+[Link](https://employwise-assign.vercel.app/)
